@@ -8,6 +8,8 @@ import ApproachSection from '@/components/ApproachSection';
 import JoinSection from '@/components/JoinSection';
 import BlogSection from '@/components/BlogSection';
 import CTASection from '@/components/CTASection';
+import FAQSection from '@/components/FAQSection';
+import Footer from '@/components/Footer';
 
 const Home: React.FC = () => {
   return (
@@ -21,6 +23,8 @@ const Home: React.FC = () => {
       <JoinSection />
       <BlogSection />
       <CTASection />
+      <FAQSection />
+      <Footer />
     </div>
   );
 };
