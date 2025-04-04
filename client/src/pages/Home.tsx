@@ -6,6 +6,8 @@ import GrowthSection from '@/components/GrowthSection';
 import ServicesSection from '@/components/ServicesSection';
 import ApproachSection from '@/components/ApproachSection';
 import JoinSection from '@/components/JoinSection';
+import BlogSection from '@/components/BlogSection';
+import CTASection from '@/components/CTASection';
 
 const Home: React.FC = () => {
   return (
@@ -17,6 +19,8 @@ const Home: React.FC = () => {
       <ServicesSection />
       <ApproachSection />
       <JoinSection />
+      <BlogSection />
+      <CTASection />
     </div>
   );
 };
