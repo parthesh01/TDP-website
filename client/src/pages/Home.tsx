@@ -4,6 +4,8 @@ import Hero from '@/components/Hero';
 import InfluencerSection from '@/components/InfluencerSection';
 import GrowthSection from '@/components/GrowthSection';
 import ServicesSection from '@/components/ServicesSection';
+import ApproachSection from '@/components/ApproachSection';
+import JoinSection from '@/components/JoinSection';
 
 const Home: React.FC = () => {
   return (
@@ -13,6 +15,8 @@ const Home: React.FC = () => {
       <InfluencerSection />
       <GrowthSection />
       <ServicesSection />
+      <ApproachSection />
+      <JoinSection />
     </div>
   );
 };
