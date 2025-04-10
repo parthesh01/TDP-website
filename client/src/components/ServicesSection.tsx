@@ -1,110 +1,195 @@
-import React from 'react';
-
-interface ServiceCategoryProps {
-  title: string;
-  services: Array<{
-    name: string;
-    highlight?: boolean;
-  }>;
-}
-
-const ServiceCategory: React.FC<ServiceCategoryProps> = ({ title, services }) => {
-  return (
-    <div className="mb-20">
-      <h3 className="text-3xl font-bold text-white mb-8">{title}</h3>
-      <div className="space-y-3">
-        {services.map((service, index) => (
-          <div 
-            key={index} 
-            className="flex justify-between items-center border-b border-gray-600 pb-2"
-          >
-            <span className="text-white">{service.name}</span>
-            {service.highlight && (
-              <div className="bg-sky-400 rounded-full px-3 py-1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-teal-800">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+import React, { useState } from "react";
+import { ArrowRight, Sparkles, ChevronRight } from "lucide-react";
 
 const ServicesSection: React.FC = () => {
-  // Service categories and their items
-  const serviceCategories = [
-    {
-      title: "Branding & Design",
-      services: [
-        { name: "Branding" },
-        { name: "Creative" },
-        { name: "UX/UI Design" },
-        { name: "Video" },
-        { name: "Web Design" },
-        { name: "Photography", highlight: true }
-      ]
-    },
-    {
-      title: "Influencer Marketing",
-      services: [
-        { name: "Talent management & contracting" },
-        { name: "Management" },
-        { name: "Brands partnership" },
-        { name: "Product placements" },
-        { name: "Creative strategy" },
-        { name: "Audience research", highlight: true }
-      ]
-    },
-    {
-      title: "Strategy & Growth",
-      services: [
-        { name: "Strategy Development" },
-        { name: "Strategy Implementation" },
-        { name: "Campaign Management" },
-        { name: "Account Based Marketing" },
-        { name: "Content Marketing", highlight: true }
-      ]
-    },
-    {
-      title: "Development",
-      services: [
-        { name: "App Development" },
-        { name: "Website Development" },
-        { name: "Site Management", highlight: true }
-      ]
-    }
-  ];
+  const [hoveredService, setHoveredService] = useState<string | null>(null);
 
   return (
-    <section className="bg-teal-900 py-20">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Left side - Introduction */}
-          <div className="lg:col-span-4">
-            <div className="sticky top-20">
-              <span className="text-gray-400 uppercase tracking-wide">SERVICES</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-4">
-                Conception to scale, <br />
-                we cover the entire <span className="font-serif italic font-normal">growth journey</span>
-              </h2>
-              <p className="text-gray-300 mb-8">
-                Whether you're just building out your marketing or looking to explore new strategies, we have the toolkits and experience to help you grow your business.
-              </p>
+    <section className="bg-gradient-to-br from-[#0F2D40] via-[#0A1F2E] to-[#081B29] text-white py-32 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
+      <div className="container mx-auto px-4 relative">
+        {/* Section Label */}
+        <div className="mb-16 flex items-center gap-2 opacity-90">
+          <div className="bg-[#B4E4FF]/20 p-2 rounded-lg backdrop-blur-sm">
+            <Sparkles className="w-5 h-5 text-[#B4E4FF]" />
+          </div>
+          <span className="text-gray-400 uppercase tracking-[0.2em] font-medium">
+            SERVICES
+          </span>
+        </div>
+
+        {/* Main Heading */}
+        <div className="mb-32">
+          <h2 className="text-7xl font-medium mb-6 leading-tight">
+            Conception to scale,
+            <br />
+            we cover the entire{" "}
+            <span className="font-playfair italic bg-gradient-to-r from-[#B4E4FF] via-white to-[#B4E4FF] bg-clip-text text-transparent">
+              growth journey
+            </span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl text-lg leading-relaxed">
+            Whether you're just building out your marketing or looking to
+            explore new strategies, we have the toolkits and experience to help
+            you grow your business.
+          </p>
+        </div>
+
+        {/* Services List */}
+        <div className="flex flex-col gap-24 max-w-4xl mx-auto relative">
+          {/* Vertical Line */}
+          <div className="absolute left-4 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-gray-700 to-transparent"></div>
+
+          {/* Branding & Design */}
+          <div className="group relative">
+            <div className="flex items-start gap-8">
+              <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-white text-lg shrink-0 shadow-lg shadow-pink-500/20">
+                B
+              </span>
+              <div className="flex-1">
+                <h3 className="text-4xl font-medium mb-8 group-hover:text-[#B4E4FF] transition-colors">
+                  Branding & Design
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    "Branding",
+                    "Creative",
+                    "UX/UI Design",
+                    "Video",
+                    "Web Design",
+                    "Photography",
+                  ].map((service) => (
+                    <div
+                      key={service}
+                      className="group/item cursor-pointer"
+                      onMouseEnter={() => setHoveredService(service)}
+                      onMouseLeave={() => setHoveredService(null)}
+                    >
+                      <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                        <ChevronRight className="w-5 h-5 text-[#B4E4FF] opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
+                        <span className="text-gray-400 group-hover/item:text-white transition-colors">
+                          {service}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-          
-          {/* Right side - Services List */}
-          <div className="lg:col-span-8">
-            {serviceCategories.map((category, index) => (
-              <ServiceCategory 
-                key={index}
-                title={category.title}
-                services={category.services}
-              />
-            ))}
+
+          {/* Influencer Marketing */}
+          <div className="group relative">
+            <div className="flex items-start gap-8">
+              <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-lg shrink-0 shadow-lg shadow-blue-500/20">
+                I
+              </span>
+              <div className="flex-1">
+                <h3 className="text-4xl font-medium mb-8 group-hover:text-[#B4E4FF] transition-colors">
+                  Influencer Marketing
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    "Talent management & contracting",
+                    "Management",
+                    "Brands partnership",
+                    "Product placements",
+                    "Creative strategy",
+                    "Audience research",
+                  ].map((service) => (
+                    <div
+                      key={service}
+                      className="group/item cursor-pointer"
+                      onMouseEnter={() => setHoveredService(service)}
+                      onMouseLeave={() => setHoveredService(null)}
+                    >
+                      <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                        <ChevronRight className="w-5 h-5 text-[#B4E4FF] opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
+                        <span className="text-gray-400 group-hover/item:text-white transition-colors">
+                          {service}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Strategy & Growth */}
+          <div className="group relative">
+            <div className="flex items-start gap-8">
+              <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white text-lg shrink-0 shadow-lg shadow-amber-500/20">
+                S
+              </span>
+              <div className="flex-1">
+                <h3 className="text-4xl font-medium mb-8 group-hover:text-[#B4E4FF] transition-colors">
+                  Strategy & Growth
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    "Strategy Development",
+                    "Strategy Implementation",
+                    "Campaign Management",
+                    "Account Based Marketing",
+                    "Content Marketing",
+                  ].map((service) => (
+                    <div
+                      key={service}
+                      className="group/item cursor-pointer"
+                      onMouseEnter={() => setHoveredService(service)}
+                      onMouseLeave={() => setHoveredService(null)}
+                    >
+                      <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                        <ChevronRight className="w-5 h-5 text-[#B4E4FF] opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
+                        <span className="text-gray-400 group-hover/item:text-white transition-colors">
+                          {service}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Development */}
+          <div className="group relative">
+            <div className="flex items-start gap-8">
+              <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white text-lg shrink-0 shadow-lg shadow-green-500/20">
+                D
+              </span>
+              <div className="flex-1">
+                <h3 className="text-4xl font-medium mb-8 group-hover:text-[#B4E4FF] transition-colors">
+                  Development
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    "App Development",
+                    "Website Development",
+                    "Site Management",
+                  ].map((service) => (
+                    <div
+                      key={service}
+                      className="group/item cursor-pointer"
+                      onMouseEnter={() => setHoveredService(service)}
+                      onMouseLeave={() => setHoveredService(null)}
+                    >
+                      <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                        <ChevronRight className="w-5 h-5 text-[#B4E4FF] opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
+                        <span className="text-gray-400 group-hover/item:text-white transition-colors">
+                          {service}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

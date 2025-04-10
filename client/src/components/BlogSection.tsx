@@ -1,91 +1,97 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { ArrowUpRight } from "lucide-react";
 
-// Blog post interface
-interface BlogPost {
-  category: string;
+interface BlogCardProps {
   image: string;
+  category: string;
+  readTime: string;
   title: string;
   description: string;
   author: string;
-  readTime: string;
 }
 
-// Blog post component
-const BlogCard: React.FC<BlogPost> = ({ category, image, title, description, author, readTime }) => {
+const BlogCard: React.FC<BlogCardProps> = ({
+  image,
+  category,
+  readTime,
+  title,
+  description,
+  author,
+}) => {
   return (
-    <div>
-      {/* Image */}
-      <div className="mb-4 relative rounded-lg overflow-hidden">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-48 object-cover"
-        />
-        <div className="absolute left-0 bottom-0 bg-white px-3 py-1">
-          <span className="text-purple-700 uppercase text-xs font-medium tracking-wide">{category}</span>
-        </div>
-        <div className="absolute right-0 bottom-0 bg-white px-3 py-1">
-          <span className="text-gray-600 text-xs">{readTime}</span>
-        </div>
+    <div className="flex flex-col">
+      <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
-      
-      {/* Content */}
-      <h3 className="text-xl font-bold mb-2 text-gray-800 hover:text-teal-700 transition-colors">
+      <div className="flex items-center gap-6 mb-4">
+        <span className="text-[#0F2D40] font-medium uppercase tracking-wider text-sm">
+          {category}
+        </span>
+        <span className="text-gray-500 text-sm">{readTime}</span>
+      </div>
+      <h3 className="text-[#0F2D40] text-2xl font-medium mb-4 hover:text-blue-600 transition-colors">
         {title}
       </h3>
-      <p className="text-gray-600 text-sm mb-3">{description}</p>
-      <p className="text-gray-800 font-medium uppercase text-xs tracking-wide">{author}</p>
-      <div className="mt-4 border-t border-gray-200 pt-4"></div>
+      <p className="text-gray-600 mb-4 line-clamp-2">{description}</p>
+      <span className="text-[#0F2D40] font-medium uppercase tracking-wider text-sm">
+        {author}
+      </span>
     </div>
   );
 };
 
 const BlogSection: React.FC = () => {
-  // Blog posts data
-  const blogPosts: BlogPost[] = [
+  const blogs = [
     {
-      category: "DIGITAL MARKETING",
-      image: "https://assets.goal.com/v3/assets/bltcc7a7ffd2503c393/blt24dc9c9e0d9cb5a1/6422be5e2e5c733d233af8d7/Select_ball_Champions_Cup_2023.jpg",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+      category: "Digital Marketing",
+      readTime: "05 min",
       title: "Top Mistakes Organizations Make in B2B Marketing: Part One",
-      description: "Marketing to other businesses takes a nuanced approach, and long-term thinking is critical for success.",
+      description:
+        "Marketing to other businesses takes a nuanced approach, and long-term thinking is critical for success.",
       author: "FARRIS QUNIBI",
-      readTime: "05 min"
     },
     {
-      category: "BRANDING",
-      image: "https://assets.goal.com/v3/assets/bltcc7a7ffd2503c393/blt24dc9c9e0d9cb5a1/6422be5e2e5c733d233af8d7/Select_ball_Champions_Cup_2023.jpg",
+      image:
+        "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800",
+      category: "Branding",
+      readTime: "05 min",
       title: "What is customer service and why is it important?",
-      description: "Marketing to other businesses takes a nuanced approach, and long-term thinking is critical for success.",
+      description:
+        "Marketing to other businesses takes a nuanced approach, and long-term thinking is critical for success.",
       author: "FARRIS QUNIBI",
-      readTime: "05 min"
     },
     {
-      category: "ANIMATION",
-      image: "https://assets.goal.com/v3/assets/bltcc7a7ffd2503c393/blt24dc9c9e0d9cb5a1/6422be5e2e5c733d233af8d7/Select_ball_Champions_Cup_2023.jpg",
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800",
+      category: "Animation",
+      readTime: "05 min",
       title: "The 9 best tools for your early-stage startup tech stack",
-      description: "Marketing to other businesses takes a nuanced approach, and long-term thinking is critical for success.",
+      description:
+        "Marketing to other businesses takes a nuanced approach, and long-term thinking is critical for success.",
       author: "FARRIS QUNIBI",
-      readTime: "05 min"
-    }
+    },
   ];
 
   return (
-    <section className="bg-white py-20">
+    <section className="py-32 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 max-w-2xl mb-6 md:mb-0">
-            Insights and lessons about marketing, digital strategy, growth, SEO, product, and more.
+        {/* Header */}
+        <div className="flex justify-between items-end mb-20">
+          <h2 className="text-[#0F2D40] text-4xl sm:text-5xl font-medium max-w-3xl leading-tight">
+            Insights and lessons about marketing, digital strategy, growth, SEO,
+            product, and more.
           </h2>
-          <Button variant="link" className="text-gray-500 font-medium">
-            SEE ALL POSTS
-          </Button>
+          <button className="text-[#0F2D40] font-medium tracking-[0.2em] uppercase text-sm flex items-center gap-2 hover:gap-4 transition-all">
+            See all posts
+            <ArrowUpRight className="w-5 h-5" />
+          </button>
         </div>
-        
-        {/* Blog posts grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
-            <BlogCard key={index} {...post} />
+
+        {/* Blog Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {blogs.map((blog, index) => (
+            <BlogCard key={index} {...blog} />
           ))}
         </div>
       </div>

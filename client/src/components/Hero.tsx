@@ -1,86 +1,87 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import CircleText from '@/components/CircleText';
-import { ArrowRight, Play } from 'lucide-react';
+import React from "react";
+import CircleText from "@/components/CircleText";
+import { Play } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="container mx-auto px-4 pt-10 pb-20">
-      <div className="flex flex-col lg:flex-row items-center">
-        {/* Left Side with Visual Elements */}
-        <div className="w-full lg:w-2/5 mb-10 lg:mb-0 relative">
-          <div className="relative transform -rotate-5">
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gray-100 rounded-full"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 border-8 border-gray-300 border-t-transparent rounded-full transform -rotate-45"></div>
-            
-            {/* Purple Darts/Arrows */}
-            <div className="relative z-10">
-              <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* First dart */}
-                <g transform="translate(80, 60) rotate(25)">
-                  <path d="M20 120L40 160L0 160L20 120Z" fill="#7F55C9" />
-                  <rect x="17" y="20" width="6" height="100" fill="#7F55C9" />
-                  <circle cx="20" cy="10" r="10" fill="#7F55C9" />
-                  <rect x="15" y="40" width="10" height="15" fill="#E5E5E5" />
-                  <rect x="15" y="70" width="10" height="15" fill="#E5E5E5" />
-                </g>
-                
-                {/* Second dart */}
-                <g transform="translate(120, 40) rotate(15)">
-                  <path d="M20 120L40 160L0 160L20 120Z" fill="#7F55C9" />
-                  <rect x="17" y="20" width="6" height="100" fill="#7F55C9" />
-                  <circle cx="20" cy="10" r="10" fill="#7F55C9" />
-                  <rect x="15" y="40" width="10" height="15" fill="#E5E5E5" />
-                  <rect x="15" y="70" width="10" height="15" fill="#E5E5E5" />
-                </g>
-                
-                {/* Third dart */}
-                <g transform="translate(160, 20) rotate(5)">
-                  <path d="M20 120L40 160L0 160L20 120Z" fill="#7F55C9" />
-                  <rect x="17" y="20" width="6" height="100" fill="#7F55C9" />
-                  <circle cx="20" cy="10" r="10" fill="#7F55C9" />
-                  <rect x="15" y="40" width="10" height="15" fill="#E5E5E5" />
-                  <rect x="15" y="70" width="10" height="15" fill="#E5E5E5" />
-                </g>
-              </svg>
-            </div>
-          </div>
+    <section className="bg-white relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Darts image */}
+      <div className="absolute bottom-0 left-0 z-10">
+        <div className="relative w-[600px]">
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent z-20" />
+          <img
+            src="/darts.jpeg"
+            alt="Purple darts hitting target"
+            className="w-full h-auto"
+          />
         </div>
-        
-        {/* Right Side with Text Content */}
-        <div className="w-full lg:w-3/5 lg:pl-10">
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 relative z-20">
+        <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-2">
-            Create the <span className="font-serif italic font-normal">growth</span>
+          <h1 className="text-5xl md:text-9xl lg:text-[5.5rem] font-bold text-[#6B46C1] leading-[1.4] font-sora text-center">
+            Create the{" "}
+            <span className="font-playfair italic font-normal">growth</span>
             <br />
             your company is
             <br />
-            <span className="font-serif italic font-normal relative curved-underline">capable of.</span>
+            <span className="font-playfair italic font-normal relative inline-block">
+              capable of
+              <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#1F2937]" />
+              .
+            </span>
           </h1>
-          
+
           {/* Agency Introduction */}
-          <div className="mt-10 mb-8 text-lg">
-            <p>We are <span className="font-bold">The Digital Pillar</span>, a full-service marketing agency</p>
-            <p>based in Pune. We work with believers & big</p>
+          <div className="mt-10 mb-8 max-w-[800px] text-left text-[26px] leading-[1.4] font-jakarta ml-80">
+            <p className="mb-1">
+              We are{" "}
+              <span className="font-bold border-b-2 border-[#1F2937]">
+                The Digital Pillar
+              </span>
+              {""}, a full-service marketing agency
+            </p>
+            <p className="mb-1">based in Pune. We work with believers & big</p>
             <p>dreamers to help them achieve their vision.</p>
           </div>
-          
-          {/* CTA Button */}
-          <div className="flex items-center">
-            <Button variant="dark" size="xl" className="inline-flex items-center">
-              <ArrowRight className="h-6 w-6 mr-2" />
-              BOOK A MEETING
-            </Button>
-            
-            {/* Circular Agency Showreel Button */}
-            <div className="ml-16 relative">
-              <div className="w-24 h-24 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-md group cursor-pointer">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center transform transition-transform group-hover:scale-110">
+
+          {/* CTA Buttons */}
+          <div className="flex items-center justify-center gap-16">
+            {/* Book Meeting Button */}
+            <a href="#" className="group">
+              <div className="bg-[#1F2937] text-white px-10 py-5 rounded-2xl flex items-center gap-3 hover:bg-[#374151] transition-colors">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="transform rotate-45"
+                >
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span className="font-medium tracking-wider text-sm">
+                  BOOK A MEETING
+                </span>
+              </div>
+            </a>
+
+            {/* Showreel Button */}
+            <div className="relative group">
+              <div className="w-24 h-24 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-md cursor-pointer">
+                <div className="w-12 h-12 bg-[#6B46C1] rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110">
                   <Play className="h-6 w-6 text-white fill-current" />
                 </div>
               </div>
-              <div className="absolute top-0 left-0 w-full h-full">
-                <CircleText text="Agency Showreel • Watch Our Work •" />
+              <div className="absolute inset-0 animate-spin-slow group-hover:animate-spin-slower">
+                <CircleText text="AGENCY SHOWREEL • WATCH NOW •" />
               </div>
             </div>
           </div>

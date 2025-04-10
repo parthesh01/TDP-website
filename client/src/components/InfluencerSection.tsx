@@ -1,169 +1,523 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import LogoCarousel from '@/components/LogoCarousel';
+import React from "react";
+import { ArrowRight } from "lucide-react";
 
 const InfluencerSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden">
-      {/* Gradient background that transitions from yellow to teal */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          background: 'linear-gradient(to bottom, hsl(var(--secondary)), hsl(var(--secondary)), hsl(186, 100%, 50%), hsl(var(--teal-400)))'
-        }}
-      ></div>
-      
-      {/* Top section - Influencer Marketing */}
-      <div className="container mx-auto px-4 relative z-10 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-20">
-          {/* Left side - Text content */}
-          <div>
-            <h2 className="text-5xl md:text-6xl font-black text-black mb-4 italic">
+    <section className="relative py-20 overflow-hidden">
+      {/* Yellow Background with curved bottom */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FFB800] via-[#FFB800] to-[#006D77]" />
+        {/* Curved bottom */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg
+            viewBox="0 0 1440 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full"
+            preserveAspectRatio="none"
+          >
+            <path d="M0 40V20C480 35 960 35 1440 20V40H0Z" fill="white" />
+          </svg>
+        </div>
+      </div>
+
+      {/* Content Container */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          {/* Left Content */}
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-[80px] font-black italic leading-tight mb-8 tracking-tight">
               The premier
             </h2>
-            <p className="text-xl mb-2">
-              Switch to Smarter Influencer Marketing with <span className="font-bold">The Digital Pillar</span>
+            <p className="text-3xl mb-4">
+              Switch to Smarter Influencer Marketing with{" "}
+              <span className="italic">The Digital Pillar</span>
             </p>
-            <p className="text-xl mb-8">
-              Unlock Scalable, Data-Driven Campaigns for <span className="font-serif italic">Real Results</span>
+            <p className="text-3xl mb-12">
+              Unlock Scalable, Data-Driven Campaigns for{" "}
+              <span className="italic">Real Results</span>
             </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <Button variant="dark" className="rounded-full px-8 py-6 text-lg">
+
+            {/* CTA Buttons */}
+            <div className="flex gap-6">
+              <button className="bg-[#1F2937] text-white px-16 py-8 rounded-full hover:bg-[#374151] transition-all text-lg font-medium hover:scale-105 transform duration-200 shadow-lg">
                 I'm a brand
-              </Button>
-              <Button variant="dark" className="rounded-full px-8 py-6 text-lg">
+              </button>
+              <button className="bg-[#1F2937] text-white px-16 py-8 rounded-full hover:bg-[#374151] transition-all text-lg font-medium hover:scale-105 transform duration-200 shadow-lg">
                 I'm a creator
-              </Button>
+              </button>
             </div>
           </div>
-          
-          {/* Right side - Video player */}
-          <div className="relative">
-            {/* Curved arrows */}
-            <svg className="absolute -left-16 top-1/4 w-20 h-40 text-black" viewBox="0 0 50 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 0C22.4 0 0 22.4 0 50C0 77.6 22.4 100 50 100" stroke="currentColor" strokeWidth="2"/>
-              <path d="M40 10L50 0L40 -10" stroke="currentColor" strokeWidth="2" transform="translate(0 10)"/>
-            </svg>
-            
-            <svg className="absolute -right-16 bottom-1/4 w-20 h-40 rotate-180 text-black" viewBox="0 0 50 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 0C22.4 0 0 22.4 0 50C0 77.6 22.4 100 50 100" stroke="currentColor" strokeWidth="2"/>
-              <path d="M40 10L50 0L40 -10" stroke="currentColor" strokeWidth="2" transform="translate(0 10)"/>
-            </svg>
-            
-            {/* Video player */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden border-4 border-white shadow-xl relative">
-              {/* Video thumbnail with product person */}
-              <div className="aspect-video relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-full h-full bg-gray-900 opacity-50"></div>
-                  <div className="absolute w-4/5 h-4/5 rounded-full border-2 border-white flex items-center justify-center overflow-hidden">
-                    {/* This would be the person image in a real implementation */}
-                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                      <span className="text-gray-500">Product Demo</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Shopping cart icons */}
-                <div className="absolute top-10 right-10">
-                  <div className="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+
+          {/* Right Content - Video Player */}
+          <div className="w-full lg:w-1/2 relative">
+            {/* Top Left Arrow */}
+            <div className="absolute -left-16 -top-16 transform -rotate-45">
+              <svg
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-[#1F2937]"
+              >
+                <path
+                  d="M70 30C70 50 30 50 30 70"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+
+            {/* Bottom Right Arrow */}
+            <div className="absolute -right-16 -bottom-16 transform rotate-135">
+              <svg
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-[#1F2937]"
+              >
+                <path
+                  d="M70 30C70 50 30 50 30 70"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden bg-[#0A2533] shadow-2xl">
+              {/* Video Thumbnail */}
+              <div className="relative aspect-[16/9]">
+                <img
+                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800"
+                  alt="Influencer Marketing Video"
+                  className="w-full h-full object-cover rounded-t-2xl"
+                />
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-t-2xl">
+                  <button className="w-16 h-16 bg-white rounded-full flex items-center justify-center transform transition-transform hover:scale-110">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M8 5v14l11-7z" fill="currentColor" />
                     </svg>
-                  </div>
+                  </button>
                 </div>
-                <div className="absolute bottom-10 left-10">
-                  <div className="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  </div>
+              </div>
+
+              {/* Video Controls */}
+              <div className="p-4 text-white">
+                {/* Progress Bar */}
+                <div className="relative h-1 bg-white/20 rounded-full mb-4">
+                  <div className="absolute left-0 top-0 h-full w-1/3 bg-[#00B37E] rounded-full"></div>
                 </div>
-                <div className="absolute right-20 bottom-20">
-                  <div className="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
+
+                {/* Control Buttons */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <button className="hover:text-[#00B37E] transition-colors">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M15 6v12M9 6v12"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </button>
+                    <button className="hover:text-[#00B37E] transition-colors">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M5 5v14l7-7-7-7z M12 5v14l7-7-7-7z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <span className="text-sm opacity-80">1:23 / 3:45</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <button className="hover:text-[#00B37E] transition-colors">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M11 5v14l-7-7 7-7z M18 5v14l-7-7 7-7z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <button className="hover:text-[#00B37E] transition-colors">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M3 9v6h4l5 5V4L7 9H3z M16 7v10"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </button>
+                    <button className="hover:text-[#00B37E] transition-colors">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M15 3h6v6M9 21H3v-6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
-              
-              {/* Video controls */}
-              <div className="flex items-center justify-between px-4 py-2 bg-black bg-opacity-70 text-white">
-                <div className="flex items-center space-x-2">
-                  <button className="p-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </button>
-                  <button className="p-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                    </svg>
-                  </button>
-                  <button className="p-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 017.072 0m-9.9-2.828a9 9 0 0112.728 0" />
-                    </svg>
-                  </button>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <button className="p-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                    </svg>
-                  </button>
-                  <button className="p-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                    </svg>
-                  </button>
-                </div>
+            </div>
+
+            {/* Floating Shopping Cart Icons */}
+            <div className="absolute -left-8 top-1/4 animate-bounce-slow">
+              <div className="w-12 h-12 bg-[#00B37E] rounded-full flex items-center justify-center shadow-lg">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="text-white"
+                >
+                  <path
+                    d="M4 4h2l2 11h12l2-9H8"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="10" cy="20" r="1" fill="currentColor" />
+                  <circle cx="18" cy="20" r="1" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute -right-8 top-2/3 animate-bounce-slow delay-300">
+              <div className="w-12 h-12 bg-[#00B37E] rounded-full flex items-center justify-center shadow-lg">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="text-white"
+                >
+                  <path
+                    d="M4 4h2l2 11h12l2-9H8"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="10" cy="20" r="1" fill="currentColor" />
+                  <circle cx="18" cy="20" r="1" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute right-1/4 -top-8 animate-bounce-slow delay-150">
+              <div className="w-12 h-12 bg-[#00B37E] rounded-full flex items-center justify-center shadow-lg">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="text-white"
+                >
+                  <path
+                    d="M4 4h2l2 11h12l2-9H8"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="10" cy="20" r="1" fill="currentColor" />
+                  <circle cx="18" cy="20" r="1" fill="currentColor" />
+                </svg>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Client logos carousel */}
-        <LogoCarousel />
-      </div>
-      
-      {/* Services Banner Section */}
-      <div className="container mx-auto px-4 relative z-10 text-center py-32">
-        {/* Main text */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 max-w-4xl mx-auto">
-          Design, Marketing, Branding, Development & more.
-          <span className="inline-block ml-4">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-              <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="2"/>
-              <path d="M8 12H16M16 12L12 8M16 12L12 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
-        </h2>
-        
-        {/* CTA Button */}
-        <Button 
-          className="rounded-full text-lg px-10 py-6 mt-8 group flex items-center justify-center"
-          style={{
-            background: 'hsl(var(--sky-300))',
-            color: 'hsl(var(--teal-900))'
-          }}
-        >
-          <span className="mr-4 group-hover:translate-x-1 transition-transform">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
-          BOOK A MEETING
-        </Button>
-      </div>
-      
-      {/* Bottom curve */}
-      <div className="relative h-24">
-        <svg viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full">
-          <path d="M0 96L60 85.3C120 74.7 240 53.3 360 42.7C480 32 600 32 720 42.7C840 53.3 960 74.7 1080 74.7C1200 74.7 1320 53.3 1380 42.7L1440 32V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V96Z" fill="white"/>
-        </svg>
+
+        {/* Logo Carousel */}
+        <div className="mt-20 overflow-hidden">
+          {/* First row - moves left */}
+          <div
+            className="flex space-x-24 py-8 logo-carousel-left mb-12"
+            style={{ width: "max-content" }}
+          >
+            {/* First set of logos */}
+            <div className="flex space-x-24">
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="120"
+                  height="120"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <path d="M35 0L0 35L35 70L70 35L35 0Z" fill="black" />
+                  <path d="M35 15L15 35L35 55L55 35L35 15Z" fill="white" />
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  CREATIVE DESIGN
+                </p>
+              </div>
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="180"
+                  height="180"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <rect
+                    x="10"
+                    y="10"
+                    width="50"
+                    height="50"
+                    stroke="black"
+                    strokeWidth="2"
+                  />
+                  <rect x="20" y="20" width="30" height="30" fill="black" />
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  COMPANY TAB LINE
+                </p>
+              </div>
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="180"
+                  height="180"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <circle cx="20" cy="35" r="10" fill="black" />
+                  <circle cx="50" cy="35" r="10" fill="black" />
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  EXCLUSIVE BRAND
+                </p>
+              </div>
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="180"
+                  height="180"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <rect x="10" y="10" width="20" height="50" fill="black" />
+                  <rect x="40" y="10" width="20" height="50" fill="black" />
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  NEW BRAND
+                </p>
+              </div>
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="180"
+                  height="180"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <circle
+                    cx="35"
+                    cy="35"
+                    r="25"
+                    stroke="black"
+                    strokeWidth="2"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 35C20 25 30 15 50 35C30 55 20 45 20 35Z"
+                    fill="black"
+                  />
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  BRAND
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Second row - moves right */}
+          <div
+            className="flex space-x-24 py-8 logo-carousel-right"
+            style={{ width: "max-content" }}
+          >
+            {/* First set of logos */}
+            <div className="flex space-x-24">
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="180"
+                  height="180"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <circle
+                    cx="35"
+                    cy="35"
+                    r="25"
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M25 20C35 30 45 20 45 45C35 35 25 45 25 20Z"
+                    fill="black"
+                  />
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  COMPANY
+                </p>
+              </div>
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="180"
+                  height="180"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <circle cx="25" cy="45" r="15" fill="black" />
+                  <circle cx="45" cy="25" r="15" fill="black" />
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  COMPANY
+                </p>
+              </div>
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="180"
+                  height="180"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <path d="M35 15L15 55H55L35 15Z" fill="black" />
+                  <path d="M25 35L35 55L45 35L35 15L25 35Z" fill="white" />
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  BRAND
+                </p>
+              </div>
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="180"
+                  height="180"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <path
+                    d="M15 35C15 25 25 15 35 15C45 15 55 25 55 35"
+                    stroke="black"
+                    strokeWidth="2"
+                    fill="none"
+                  />
+                  <text
+                    x="35"
+                    y="50"
+                    fontSize="20"
+                    textAnchor="middle"
+                    fill="black"
+                  >
+                    A&C
+                  </text>
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  ARTS & CRAFTS
+                </p>
+              </div>
+              <div className="flex flex-col items-center flex-shrink-0">
+                <svg
+                  width="180"
+                  height="180"
+                  viewBox="0 0 70 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                >
+                  <path
+                    d="M10 15H60V55H10V15Z"
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M25 15L10 35L25 55M45 15L60 35L45 55"
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="2"
+                  />
+                </svg>
+                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                  CREATIVE DESIGN
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="mt-20 text-center text-white relative z-10">
+          <h2 className="text-6xl font-bold mb-8">
+            Design, Marketing, Branding,
+            <br />
+            Development & more.
+            <ArrowRight className="inline-block ml-4 h-14 w-14" />
+          </h2>
+
+          {/* Book Meeting Button */}
+          <a
+            href="#"
+            className="group inline-flex items-center gap-3 text-white relative px-10 py-4 mt-10"
+          >
+            <span className="relative">
+              <span className="text-lg uppercase tracking-wider">
+                Book a meeting
+              </span>
+              <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-white"></span>
+            </span>
+            <div className="w-12 h-12 bg-[#7DD3FC] rounded-full flex items-center justify-center transform transition-transform group-hover:translate-x-1">
+              <ArrowRight className="h-6 w-6 text-[#1F2937]" />
+            </div>
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -1,35 +1,53 @@
-import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import NotFound from "@/pages/not-found";
-import Home from "@/pages/Home";
-import Services from "@/pages/Services";
-import CaseStudies from "@/pages/CaseStudies";
-import Blogs from "@/pages/Blogs";
-import About from "@/pages/About";
-import Contact from "@/pages/Contact";
-
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/services" component={Services} />
-      <Route path="/case-studies" component={CaseStudies} />
-      <Route path="/blogs" component={Blogs} />
-      <Route path="/about" component={About} />
-      <Route path="/contact" component={Contact} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import InfluencerSection from "./components/InfluencerSection";
+import ApproachSection from "./components/ApproachSection";
+import GrowthSection from "./components/GrowthSection";
+import ServicesSection from "./components/ServicesSection";
+import ServicesBanner from "./components/ServicesBanner";
+import LogoCarousel from "./components/LogoCarousel";
+import FAQSection from "./components/FAQSection";
+import BlogSection from "./components/BlogSection";
+import Footer from "./components/Footer";
+import Services from "./components/Services";
+import CreatorsSection from "./components/CreatorsSection";
+import CallToAction from "./components/CallToAction";
+import Loader from "./components/Loader";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router />
-      <Toaster />
-    </QueryClientProvider>
+    <div className="overflow-x-hidden">
+      <Loader isLoading={isLoading} />
+      <div
+        className={`transition-opacity duration-500 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+      >
+        <Header />
+        <Hero />
+        <InfluencerSection />
+        <GrowthSection />
+        <ServicesSection />
+        <ApproachSection />
+        <CreatorsSection />
+        <BlogSection />
+        <CallToAction />
+        <FAQSection />
+        <Footer />
+      </div>
+    </div>
   );
 }
 
