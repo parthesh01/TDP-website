@@ -40,10 +40,10 @@ const InfluencerSection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex gap-6">
-              <button className="bg-[#1F2937] text-white px-16 py-8 rounded-full hover:bg-[#374151] transition-all text-lg font-medium hover:scale-105 transform duration-200 shadow-lg">
+              <button className="bg-[#1F2937] text-white px-16 py-8 rounded-full hover:bg-[#374151] transition-all text-2xl font-medium hover:scale-105 transform duration-200 shadow-lg">
                 I'm a brand
               </button>
-              <button className="bg-[#1F2937] text-white px-16 py-8 rounded-full hover:bg-[#374151] transition-all text-lg font-medium hover:scale-105 transform duration-200 shadow-lg">
+              <button className="bg-[#1F2937] text-white px-16 py-8 rounded-full hover:bg-[#374151] transition-all text-2xl font-medium hover:scale-105 transform duration-200 shadow-lg">
                 I'm a creator
               </button>
             </div>

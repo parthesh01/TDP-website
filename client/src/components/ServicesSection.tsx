@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import { ArrowRight, Sparkles, ChevronRight } from "lucide-react";
+import { Sparkles, ChevronRight } from "lucide-react";
 
 const ServicesSection: React.FC = () => {
-  const [hoveredService, setHoveredService] = useState<string | null>(null);
-
   return (
     <section className="bg-gradient-to-br from-[#0F2D40] via-[#0A1F2E] to-[#081B29] text-white py-32 relative overflow-hidden">
       {/* Background Elements */}
@@ -63,12 +60,7 @@ const ServicesSection: React.FC = () => {
                     "Web Design",
                     "Photography",
                   ].map((service) => (
-                    <div
-                      key={service}
-                      className="group/item cursor-pointer"
-                      onMouseEnter={() => setHoveredService(service)}
-                      onMouseLeave={() => setHoveredService(null)}
-                    >
+                    <div key={service} className="group/item cursor-pointer">
                       <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
                         <ChevronRight className="w-5 h-5 text-[#B4E4FF] opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
                         <span className="text-gray-400 group-hover/item:text-white transition-colors">
@@ -101,12 +93,7 @@ const ServicesSection: React.FC = () => {
                     "Creative strategy",
                     "Audience research",
                   ].map((service) => (
-                    <div
-                      key={service}
-                      className="group/item cursor-pointer"
-                      onMouseEnter={() => setHoveredService(service)}
-                      onMouseLeave={() => setHoveredService(null)}
-                    >
+                    <div key={service} className="group/item cursor-pointer">
                       <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
                         <ChevronRight className="w-5 h-5 text-[#B4E4FF] opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
                         <span className="text-gray-400 group-hover/item:text-white transition-colors">
@@ -138,12 +125,7 @@ const ServicesSection: React.FC = () => {
                     "Account Based Marketing",
                     "Content Marketing",
                   ].map((service) => (
-                    <div
-                      key={service}
-                      className="group/item cursor-pointer"
-                      onMouseEnter={() => setHoveredService(service)}
-                      onMouseLeave={() => setHoveredService(null)}
-                    >
+                    <div key={service} className="group/item cursor-pointer">
                       <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
                         <ChevronRight className="w-5 h-5 text-[#B4E4FF] opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
                         <span className="text-gray-400 group-hover/item:text-white transition-colors">
@@ -173,12 +155,7 @@ const ServicesSection: React.FC = () => {
                     "Website Development",
                     "Site Management",
                   ].map((service) => (
-                    <div
-                      key={service}
-                      className="group/item cursor-pointer"
-                      onMouseEnter={() => setHoveredService(service)}
-                      onMouseLeave={() => setHoveredService(null)}
-                    >
+                    <div key={service} className="group/item cursor-pointer">
                       <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
                         <ChevronRight className="w-5 h-5 text-[#B4E4FF] opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
                         <span className="text-gray-400 group-hover/item:text-white transition-colors">

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
 import { Menu, X, ArrowRight } from "lucide-react";
 

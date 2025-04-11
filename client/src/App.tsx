@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -6,12 +6,9 @@ import InfluencerSection from "./components/InfluencerSection";
 import ApproachSection from "./components/ApproachSection";
 import GrowthSection from "./components/GrowthSection";
 import ServicesSection from "./components/ServicesSection";
-import ServicesBanner from "./components/ServicesBanner";
-import LogoCarousel from "./components/LogoCarousel";
 import FAQSection from "./components/FAQSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
-import Services from "./components/Services";
 import CreatorsSection from "./components/CreatorsSection";
 import CallToAction from "./components/CallToAction";
 import Loader from "./components/Loader";

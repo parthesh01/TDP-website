@@ -24,7 +24,8 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
         </h1>
       </div>
 
-      <style jsx>{`
+      <style>
+        {`
         .newtons-cradle {
           --uib-size: 50px;
           --uib-speed: 1.2s;
@@ -96,7 +97,8 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
             animation-timing-function: ease-in;
           }
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };

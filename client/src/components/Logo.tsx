@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "wouter";
 
 const Logo: React.FC = () => {
