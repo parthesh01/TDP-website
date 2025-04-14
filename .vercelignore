@@ -4,5 +4,6 @@ node_modules
 README.md
 .vscode
 .idea
-dist
-*.log 
+*.log
+client/node_modules
+client/dist 
