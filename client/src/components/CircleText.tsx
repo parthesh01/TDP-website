@@ -10,7 +10,7 @@ const CircleText: React.FC<CircleTextProps> = ({ text }) => {
       <div className="relative w-full h-full">
         <svg
           viewBox="0 0 100 100"
-          className="w-full h-full"
+          className="w-full h-full animate-[spin_20s_linear_infinite] group-hover:animate-[spin_15s_linear_infinite]"
           style={{ transform: "rotate(-90deg)" }}
         >
           <path
@@ -19,8 +19,10 @@ const CircleText: React.FC<CircleTextProps> = ({ text }) => {
             fill="none"
             stroke="none"
           />
-          <text className="text-[8px] fill-[#1F2937]">
-            <textPath href="#circle">{text}</textPath>
+          <text className="text-[10px] fill-[#1F2937]">
+            <textPath href="#circle" startOffset="0%">
+              {text}
+            </textPath>
           </text>
         </svg>
       </div>

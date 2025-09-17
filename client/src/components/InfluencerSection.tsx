@@ -22,18 +22,18 @@ const InfluencerSection: React.FC = () => {
       </div>
 
       {/* Content Container */}
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="container relative z-10 px-4 mx-auto">
+        <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
           {/* Left Content */}
           <div className="w-full lg:w-1/2">
             <h2 className="text-[80px] font-black italic leading-tight mb-8 tracking-tight">
               The premier
             </h2>
-            <p className="text-3xl mb-4">
+            <p className="mb-4 text-3xl">
               Switch to Smarter Influencer Marketing with{" "}
               <span className="italic">The Digital Pillar</span>
             </p>
-            <p className="text-3xl mb-12">
+            <p className="mb-12 text-3xl">
               Unlock Scalable, Data-Driven Campaigns for{" "}
               <span className="italic">Real Results</span>
             </p>
@@ -50,9 +50,9 @@ const InfluencerSection: React.FC = () => {
           </div>
 
           {/* Right Content - Video Player */}
-          <div className="w-full lg:w-1/2 relative">
+          <div className="relative w-full lg:w-1/2">
             {/* Top Left Arrow */}
-            <div className="absolute -left-16 -top-16 transform -rotate-45">
+            <div className="absolute transform -rotate-45 -left-16 -top-16">
               <svg
                 width="100"
                 height="100"
@@ -71,7 +71,7 @@ const InfluencerSection: React.FC = () => {
             </div>
 
             {/* Bottom Right Arrow */}
-            <div className="absolute -right-16 -bottom-16 transform rotate-135">
+            <div className="absolute transform -right-16 -bottom-16 rotate-135">
               <svg
                 width="100"
                 height="100"
@@ -95,11 +95,11 @@ const InfluencerSection: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800"
                   alt="Influencer Marketing Video"
-                  className="w-full h-full object-cover rounded-t-2xl"
+                  className="object-cover w-full h-full rounded-t-2xl"
                 />
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-t-2xl">
-                  <button className="w-16 h-16 bg-white rounded-full flex items-center justify-center transform transition-transform hover:scale-110">
+                  <button className="flex items-center justify-center w-16 h-16 transition-transform transform bg-white rounded-full hover:scale-110">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path d="M8 5v14l11-7z" fill="currentColor" />
                     </svg>
@@ -110,7 +110,7 @@ const InfluencerSection: React.FC = () => {
               {/* Video Controls */}
               <div className="p-4 text-white">
                 {/* Progress Bar */}
-                <div className="relative h-1 bg-white/20 rounded-full mb-4">
+                <div className="relative h-1 mb-4 rounded-full bg-white/20">
                   <div className="absolute left-0 top-0 h-full w-1/3 bg-[#00B37E] rounded-full"></div>
                 </div>
 
@@ -217,7 +217,7 @@ const InfluencerSection: React.FC = () => {
                 </svg>
               </div>
             </div>
-            <div className="absolute -right-8 top-2/3 animate-bounce-slow delay-300">
+            <div className="absolute delay-300 -right-8 top-2/3 animate-bounce-slow">
               <div className="w-12 h-12 bg-[#00B37E] rounded-full flex items-center justify-center shadow-lg">
                 <svg
                   width="24"
@@ -237,7 +237,7 @@ const InfluencerSection: React.FC = () => {
                 </svg>
               </div>
             </div>
-            <div className="absolute right-1/4 -top-8 animate-bounce-slow delay-150">
+            <div className="absolute delay-150 right-1/4 -top-8 animate-bounce-slow">
               <div className="w-12 h-12 bg-[#00B37E] rounded-full flex items-center justify-center shadow-lg">
                 <svg
                   width="24"
@@ -264,7 +264,7 @@ const InfluencerSection: React.FC = () => {
         <div className="mt-20 overflow-hidden">
           {/* First row - moves left */}
           <div
-            className="flex space-x-24 py-8 logo-carousel-left mb-12"
+            className="flex py-8 mb-12 space-x-24 logo-carousel-left"
             style={{ width: "max-content" }}
           >
             {/* First set of logos */}
@@ -276,12 +276,12 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <path d="M35 0L0 35L35 70L70 35L35 0Z" fill="black" />
                   <path d="M35 15L15 35L35 55L55 35L35 15Z" fill="white" />
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   CREATIVE DESIGN
                 </p>
               </div>
@@ -292,7 +292,7 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <rect
                     x="10"
@@ -304,7 +304,7 @@ const InfluencerSection: React.FC = () => {
                   />
                   <rect x="20" y="20" width="30" height="30" fill="black" />
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   COMPANY TAB LINE
                 </p>
               </div>
@@ -315,12 +315,12 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <circle cx="20" cy="35" r="10" fill="black" />
                   <circle cx="50" cy="35" r="10" fill="black" />
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   EXCLUSIVE BRAND
                 </p>
               </div>
@@ -331,12 +331,12 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <rect x="10" y="10" width="20" height="50" fill="black" />
                   <rect x="40" y="10" width="20" height="50" fill="black" />
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   NEW BRAND
                 </p>
               </div>
@@ -347,7 +347,7 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <circle
                     cx="35"
@@ -362,7 +362,7 @@ const InfluencerSection: React.FC = () => {
                     fill="black"
                   />
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   BRAND
                 </p>
               </div>
@@ -371,7 +371,7 @@ const InfluencerSection: React.FC = () => {
 
           {/* Second row - moves right */}
           <div
-            className="flex space-x-24 py-8 logo-carousel-right"
+            className="flex py-8 space-x-24 logo-carousel-right"
             style={{ width: "max-content" }}
           >
             {/* First set of logos */}
@@ -383,7 +383,7 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <circle
                     cx="35"
@@ -398,7 +398,7 @@ const InfluencerSection: React.FC = () => {
                     fill="black"
                   />
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   COMPANY
                 </p>
               </div>
@@ -409,12 +409,12 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <circle cx="25" cy="45" r="15" fill="black" />
                   <circle cx="45" cy="25" r="15" fill="black" />
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   COMPANY
                 </p>
               </div>
@@ -425,12 +425,12 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <path d="M35 15L15 55H55L35 15Z" fill="black" />
                   <path d="M25 35L35 55L45 35L35 15L25 35Z" fill="white" />
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   BRAND
                 </p>
               </div>
@@ -441,7 +441,7 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <path
                     d="M15 35C15 25 25 15 35 15C45 15 55 25 55 35"
@@ -459,7 +459,7 @@ const InfluencerSection: React.FC = () => {
                     A&C
                   </text>
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   ARTS & CRAFTS
                 </p>
               </div>
@@ -470,7 +470,7 @@ const InfluencerSection: React.FC = () => {
                   viewBox="0 0 70 70"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="transition-opacity opacity-90 hover:opacity-100"
                 >
                   <path
                     d="M10 15H60V55H10V15Z"
@@ -485,7 +485,7 @@ const InfluencerSection: React.FC = () => {
                     strokeWidth="2"
                   />
                 </svg>
-                <p className="text-sm mt-3 font-bold text-black tracking-wider">
+                <p className="mt-3 text-sm font-bold tracking-wider text-black">
                   CREATIVE DESIGN
                 </p>
               </div>
@@ -494,8 +494,8 @@ const InfluencerSection: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-20 text-center text-white relative z-10">
-          <h2 className="text-6xl font-bold mb-8">
+        <div className="relative z-10 mt-20 text-center text-white">
+          <h2 className="mb-8 text-6xl font-bold">
             Design, Marketing, Branding,
             <br />
             Development & more.
@@ -505,10 +505,10 @@ const InfluencerSection: React.FC = () => {
           {/* Book Meeting Button */}
           <a
             href="#"
-            className="group inline-flex items-center gap-3 text-white relative px-10 py-4 mt-10"
+            className="relative inline-flex items-center gap-3 px-10 py-4 mt-10 text-white group"
           >
             <span className="relative">
-              <span className="text-lg uppercase tracking-wider">
+              <span className="text-lg tracking-wider uppercase">
                 Book a meeting
               </span>
               <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-white"></span>

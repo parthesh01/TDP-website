@@ -47,8 +47,8 @@ const config: Config = {
         },
       },
       animation: {
-        'spin-slow': 'spin 12s linear infinite',
-        'spin-slower': 'spin 8s linear infinite',
+        'spin-slow': 'spin 20s linear infinite',
+        'spin-slower': 'spin 15s linear infinite',
         'bounce-slow': 'bounce 3s infinite',
       },
       keyframes: {

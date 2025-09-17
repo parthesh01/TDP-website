@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
       {/* Darts image */}
       <div className="absolute bottom-0 left-0 z-10">
         <div className="relative w-[600px]">
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent z-20" />
+          <div className="absolute inset-0 z-20 bg-gradient-to-t from-white via-transparent to-transparent" />
           <img
             src="/darts.jpeg"
             alt="Purple darts hitting target"
@@ -18,18 +18,22 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 relative z-20">
+      <div className="container relative z-20 px-4 mx-auto">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-5xl md:text-9xl lg:text-[5.5rem] font-bold text-[#6B46C1] leading-[1.4] font-sora text-center">
             Create the{" "}
-            <span className="font-playfair italic font-normal">growth</span>
+            <span className="italic font-normal font-playfair">growth</span>
             <br />
             your company is
             <br />
-            <span className="font-playfair italic font-normal relative inline-block">
+            <span className="relative inline-block italic font-normal font-playfair">
               capable of
-              <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#1F2937]" />
+              <img
+                src="images/decorative-underline.png"
+                alt="Decorative underline"
+                className="absolute left-0 w-full h-auto -bottom-28"
+              />
               .
             </span>
           </h1>
@@ -67,20 +71,20 @@ const Hero: React.FC = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span className="font-medium tracking-wider text-sm">
+                <span className="text-sm font-medium tracking-wider">
                   BOOK A MEETING
                 </span>
               </div>
             </a>
 
             {/* Showreel Button */}
-            <div className="relative group">
-              <div className="w-24 h-24 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow-md cursor-pointer">
-                <div className="w-12 h-12 bg-[#6B46C1] rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110">
-                  <Play className="h-6 w-6 text-white fill-current" />
+            <div className="relative transition-transform duration-300 cursor-pointer group hover:scale-105">
+              <div className="flex items-center justify-center w-24 h-24 transition-all duration-300 bg-white border border-gray-200 rounded-full shadow-md group-hover:shadow-lg">
+                <div className="w-12 h-12 bg-[#6B46C1] rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:bg-[#7c5ac9]">
+                  <Play className="w-6 h-6 text-white transition-transform duration-300 fill-current group-hover:scale-110" />
                 </div>
               </div>
-              <div className="absolute inset-0 animate-spin-slow group-hover:animate-spin-slower">
+              <div className="absolute inset-0">
                 <CircleText text="AGENCY SHOWREEL • WATCH NOW •" />
               </div>
             </div>
