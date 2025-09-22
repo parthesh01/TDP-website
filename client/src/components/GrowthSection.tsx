@@ -4,20 +4,20 @@ import { ArrowRight } from "lucide-react";
 const GrowthSection: React.FC = () => {
   return (
     <>
-      <section className="bg-white py-24">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-white">
+        <div className="container px-4 mx-auto">
           {/* Main Heading */}
           <h2 className="text-[56px] md:text-[72px] font-bold text-[#1F2937] text-center leading-tight mb-20">
             We help ambitious companies meet &<br />
             exceed their{" "}
-            <span className="font-playfair italic font-normal">
+            <span className="italic font-normal font-playfair">
               growth goals
             </span>
             .
           </h2>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
             {/* Testimonial Card */}
             <div className="lg:col-span-7 bg-[#0F2D40] rounded-3xl p-8 relative overflow-hidden">
               <div className="flex items-center gap-8">
@@ -46,7 +46,7 @@ const GrowthSection: React.FC = () => {
                       </svg>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-medium mb-6">
+                  <h3 className="mb-6 text-2xl font-medium">
                     "Efficient, knowledgeable, & smooth experience. Highly
                     recommended"
                   </h3>
@@ -70,7 +70,7 @@ const GrowthSection: React.FC = () => {
               <h3 className="text-2xl font-bold text-[#1F2937] mb-4">
                 Our Mission
               </h3>
-              <p className="text-gray-600 text-lg">
+              <p className="text-lg text-gray-600">
                 To ensure long-term success for our companies, we strive
                 diligently to combine the best of digital & traditional
                 marketing strategies.
@@ -79,12 +79,12 @@ const GrowthSection: React.FC = () => {
 
             {/* TDP Card */}
             <div className="lg:col-span-7 bg-[#EFF6FF] rounded-3xl p-8">
-              <div className="flex justify-between items-start mb-8">
+              <div className="flex items-start justify-between mb-8">
                 <div className="max-w-[50%]">
                   <h3 className="text-3xl font-bold text-[#1F2937] mb-4">
                     We'r TDP
                   </h3>
-                  <p className="text-gray-600 text-lg mb-6">
+                  <p className="mb-6 text-lg text-gray-600">
                     A group of creative thinkers gathered under one roof
                     collaboratively striving forward with a motto to take
                     business developments to its pinnacle.
@@ -116,7 +116,7 @@ const GrowthSection: React.FC = () => {
               <h3 className="text-2xl font-bold text-[#1F2937] mb-4">
                 Our Vision
               </h3>
-              <p className="text-gray-600 text-lg">
+              <p className="text-lg text-gray-600">
                 We are an Independent creative marketing agency with a vision to
                 set new standards & create history.
               </p>
@@ -126,53 +126,77 @@ const GrowthSection: React.FC = () => {
       </section>
 
       {/* Yellow Banner Section */}
-      <section className="bg-[#F4B41A] py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center relative">
+      <section className="bg-[#F4B41A] py-2 sm:py-4">
+        <div className="container px-2 mx-auto sm:px-4">
+          <div className="relative flex items-center justify-between overflow-x-auto">
             {/* Pillars and Text */}
-            <div className="flex-1 flex justify-between items-center">
+            <div className="flex items-center justify-between flex-1 gap-1 sm:gap-2 min-w-max">
               {/* First Pillar */}
-              <img src="/images/pillar.png" alt="Pillar" className="h-10" />
+              <img
+                src="/images/pillar.png"
+                alt="Pillar"
+                className="flex-shrink-0 h-6 sm:h-8 md:h-10"
+              />
 
               {/* NEW IDEAS */}
-              <span className="text-[#0F2D40] font-extrabold text-lg tracking-wider">
+              <span className="text-[#0F2D40] font-extrabold text-xs sm:text-sm md:text-lg tracking-wider whitespace-nowrap">
                 NEW IDEAS
               </span>
 
               {/* Second Pillar */}
-              <img src="/images/pillar.png" alt="Pillar" className="h-10" />
+              <img
+                src="/images/pillar.png"
+                alt="Pillar"
+                className="flex-shrink-0 h-6 sm:h-8 md:h-10"
+              />
 
               {/* GO VIRAL */}
-              <span className="text-[#0F2D40] font-extrabold text-lg tracking-wider">
+              <span className="text-[#0F2D40] font-extrabold text-xs sm:text-sm md:text-lg tracking-wider whitespace-nowrap">
                 GO VIRAL
               </span>
 
               {/* Third Pillar */}
-              <img src="/images/pillar.png" alt="Pillar" className="h-10" />
+              <img
+                src="/images/pillar.png"
+                alt="Pillar"
+                className="flex-shrink-0 h-6 sm:h-8 md:h-10"
+              />
 
               {/* JOIN US */}
-              <span className="text-[#0F2D40] font-extrabold text-lg tracking-wider">
+              <span className="text-[#0F2D40] font-extrabold text-xs sm:text-sm md:text-lg tracking-wider whitespace-nowrap">
                 JOIN US
               </span>
 
               {/* Fourth Pillar */}
-              <img src="/images/pillar.png" alt="Pillar" className="h-10" />
+              <img
+                src="/images/pillar.png"
+                alt="Pillar"
+                className="flex-shrink-0 h-6 sm:h-8 md:h-10"
+              />
 
               {/* TDP */}
-              <span className="text-[#0F2D40] font-extrabold text-lg tracking-wider">
+              <span className="text-[#0F2D40] font-extrabold text-xs sm:text-sm md:text-lg tracking-wider whitespace-nowrap">
                 TDP
               </span>
 
               {/* Fifth Pillar */}
-              <img src="/images/pillar.png" alt="Pillar" className="h-10" />
+              <img
+                src="/images/pillar.png"
+                alt="Pillar"
+                className="flex-shrink-0 h-6 sm:h-8 md:h-10"
+              />
 
               {/* GROWTH */}
-              <span className="text-[#0F2D40] font-extrabold text-lg tracking-wider">
+              <span className="text-[#0F2D40] font-extrabold text-xs sm:text-sm md:text-lg tracking-wider whitespace-nowrap">
                 GROWTH
               </span>
 
               {/* Sixth Pillar */}
-              <img src="/images/pillar.png" alt="Pillar" className="h-10" />
+              <img
+                src="/images/pillar.png"
+                alt="Pillar"
+                className="flex-shrink-0 h-6 sm:h-8 md:h-10"
+              />
             </div>
           </div>
         </div>
