@@ -4,10 +4,10 @@ import { Play } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-white relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Darts image */}
+    <section className="bg-white relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Darts image - Responsive visibility */}
       <div className="absolute bottom-0 left-0 z-10">
-        <div className="relative w-[600px]">
+        <div className="relative w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px]">
           <div className="absolute inset-0 z-20 bg-gradient-to-t from-white via-transparent to-transparent" />
           <img
             src="/darts.jpeg"
@@ -18,10 +18,10 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container relative z-20 px-4 mx-auto">
-        <div className="max-w-4xl mx-auto">
+      <div className="container relative z-10 px-4 mx-auto py-8 lg:py-20">
+        <div className="max-w-4xl mx-auto lg:ml-80">
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-9xl lg:text-[5.5rem] font-bold text-[#6B46C1] leading-[1.4] font-sora text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-[5.5rem] font-bold text-[#6B46C1] leading-[1.2] sm:leading-[1.4] font-sora text-center">
             Create the{" "}
             <span className="italic font-normal font-playfair">growth</span>
             <br />
@@ -32,14 +32,14 @@ const Hero: React.FC = () => {
               <img
                 src="images/decorative-underline.png"
                 alt="Decorative underline"
-                className="absolute left-0 w-full h-auto -bottom-28"
+                className="absolute left-0 w-full h-auto -bottom-8 sm:-bottom-16 lg:-bottom-28"
               />
               .
             </span>
           </h1>
 
           {/* Agency Introduction */}
-          <div className="mt-10 mb-8 max-w-[800px] text-left text-[26px] leading-[1.4] font-jakarta ml-80">
+          <div className="mt-6 sm:mt-8 lg:mt-10 mb-6 sm:mb-8 max-w-[800px] text-center lg:text-left text-base sm:text-lg md:text-xl lg:text-[26px] leading-[1.4] font-jakarta">
             <p className="mb-1">
               We are{" "}
               <span className="font-bold border-b-2 border-[#1F2937]">
@@ -52,16 +52,16 @@ const Hero: React.FC = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex items-center justify-center gap-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-16">
             {/* Book Meeting Button */}
-            <a href="#" className="group">
-              <div className="bg-[#1F2937] text-white px-10 py-5 rounded-2xl flex items-center gap-3 hover:bg-[#374151] transition-colors">
+            <a href="#" className="group w-full sm:w-auto">
+              <div className="bg-[#1F2937] text-white px-6 sm:px-8 lg:px-10 py-4 sm:py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-[#374151] transition-colors">
                 <svg
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="transform rotate-45"
+                  className="transform rotate-45 sm:w-6 sm:h-6"
                 >
                   <path
                     d="M5 12H19M19 12L12 5M19 12L12 19"
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span className="text-sm font-medium tracking-wider">
+                <span className="text-xs sm:text-sm font-medium tracking-wider">
                   BOOK A MEETING
                 </span>
               </div>
@@ -79,12 +79,12 @@ const Hero: React.FC = () => {
 
             {/* Showreel Button */}
             <div className="relative transition-transform duration-300 cursor-pointer group hover:scale-105">
-              <div className="flex items-center justify-center w-24 h-24 transition-all duration-300 bg-white border border-gray-200 rounded-full shadow-md group-hover:shadow-lg">
-                <div className="w-12 h-12 bg-[#6B46C1] rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:bg-[#7c5ac9]">
-                  <Play className="w-6 h-6 text-white transition-transform duration-300 fill-current group-hover:scale-110" />
+              <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 transition-all duration-300 bg-white border border-gray-200 rounded-full shadow-md group-hover:shadow-lg">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#6B46C1] rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:bg-[#7c5ac9]">
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white transition-transform duration-300 fill-current group-hover:scale-110" />
                 </div>
               </div>
-              <div className="absolute inset-0">
+              <div className="absolute inset-0 hidden sm:block">
                 <CircleText text="AGENCY SHOWREEL • WATCH NOW •" />
               </div>
             </div>
