@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowUpRight, ChevronRight, Star, Quote } from "lucide-react";
+import { ArrowUpRight, Quote } from "lucide-react";
 
 const WebDevelopment: React.FC = () => {
   return (
