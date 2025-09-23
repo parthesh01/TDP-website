@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container relative z-10 px-4 py-8 mx-auto lg:py-20">
+      <div className="container relative z-10 px-4 py-4 mx-auto sm:py-10 lg:py-20">
         <div className="max-w-4xl mx-auto lg:ml-80">
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-[5.5rem] font-bold text-[#6B46C1] leading-[1.2] sm:leading-[1.4] font-sora text-center">
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
           </h1>
 
           {/* Agency Introduction */}
-          <div className="mt-2 sm:mt-4 lg:mt-16 mb-6 sm:mb-8 max-w-650px] ml-auto text-right text-base sm:text-lg md:text-xl lg:text-[24px] leading-[1.4] font-jakarta">
+          <div className="mt-2 sm:mt-4 lg:mt-16 mb-6 sm:mb-8 max-w-[650px] mx-auto sm:ml-auto text-center sm:text-right text-base sm:text-lg md:text-xl lg:text-[24px] leading-[1.4] font-jakarta">
             <p className="mb-1">
               We are{" "}
               <span className="font-bold border-b-2 border-[#1F2937]">
