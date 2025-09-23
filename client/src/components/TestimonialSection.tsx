@@ -15,7 +15,7 @@ const TestimonialSection: React.FC = () => {
             {/* Character Image */}
             <div className="w-full md:w-1/2 flex justify-center md:justify-start">
               <img
-                src="/images/character/3d-character.png"
+                src="client/public/images/character/3d-character.png"
                 alt="3D Character Testimonial"
                 className="w-60 sm:w-72 lg:w-80 h-auto"
               />
