@@ -57,12 +57,12 @@ const Services: React.FC = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#2B1247] via-[#3D1A6B] to-[#1C0F33] min-h-[60vh] md:min-h-[70vh] flex items-center">
-        <div className="container h-full px-4 pb-0 mx-auto -mt-28">
-          <div className="grid items-center h-full grid-cols-1 gap-8 lg:grid-cols-2">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#2B1247] via-[#3D1A6B] to-[#1C0F33] min-h-[80vh] md:min-h-[90vh] lg:min-h-[100vh] flex items-center">
+        <div className="container h-full px-4 pb-0 mx-auto -mt-20 sm:-mt-24 lg:-mt-28">
+          <div className="grid items-center h-full grid-cols-1 gap-0 sm:gap-2 lg:gap-8 lg:grid-cols-2">
             {/* Text */}
-            <div className="text-white">
-              <h1 className="text-[36px] md:text-[56px] font-bold leading-tight">
+            <div className="order-1 text-center text-white -mb-52 lg:text-left lg:order-1 sm:-mb-2 lg:mb-0">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[56px] font-bold leading-tight px-2 sm:px-0">
                 build a personal brand
                 <br /> that gets noticed, gets
                 <br />{" "}
@@ -70,18 +70,18 @@ const Services: React.FC = () => {
                   paid and gets results.
                 </span>
               </h1>
-              <p className="max-w-xl mt-6 text-sm md:text-base opacity-90">
+              <p className="max-w-full px-2 mx-auto mt-4 text-sm leading-relaxed sm:max-w-xl lg:mx-0 sm:mt-6 sm:text-base md:text-lg opacity-90 sm:px-0">
                 Personal Branding & Social Media for Founders, CEOs and
                 Entrepreneurs
               </p>
             </div>
 
             {/* Image */}
-            <div className="relative h-[80vh] md:h-[90vh] lg:h-[100vh] flex items-end justify-end overflow-hidden lg:-mr-32 xl:-mr-56">
+            <div className="relative h-[65vh] sm:h-[70vh] md:h-[75vh] lg:h-[115vh] flex items-end justify-center lg:justify-end overflow-hidden order-2 lg:order-2 lg:-mr-32 xl:-mr-56">
               <img
                 src="/images/personal-branding-cutout (2).png"
                 alt="Personal Branding Hero"
-                className="object-cover object-center w-auto h-full max-w-none"
+                className="object-contain object-bottom w-full h-full lg:w-auto lg:max-w-none"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement;
                   target.onerror = null;
@@ -613,21 +613,21 @@ const Services: React.FC = () => {
           className="container min-h-screen px-4 py-16 mx-auto mt-24"
         >
           <div className="relative">
-            {/* Vertical Line Background (Black) - Extended */}
+            {/* Vertical Line Background (Black) - Extended - Hidden on mobile */}
             <div
-              className="absolute top-0 w-1 -translate-x-1/2 bg-gray-800 left-1/2"
+              className="absolute top-0 hidden w-1 -translate-x-1/2 bg-gray-800 lg:block left-1/2"
               style={{ height: "calc(100% + 200px)" }}
             ></div>
 
-            {/* Animated Blue Line */}
+            {/* Animated Blue Line - Hidden on mobile */}
             <div
-              className="absolute top-0 w-1 transition-all duration-75 ease-out -translate-x-1/2 bg-blue-500 left-1/2"
+              className="absolute top-0 hidden w-1 transition-all duration-75 ease-out -translate-x-1/2 bg-blue-500 lg:block left-1/2"
               style={{ height: `${timelineProgress * 120}%` }}
             ></div>
 
-            {/* Leading Pulsing Circle */}
+            {/* Leading Pulsing Circle - Hidden on mobile */}
             <div
-              className="absolute w-6 h-6 transition-all duration-75 ease-out -translate-x-1/2 -translate-y-1/2 left-1/2"
+              className="absolute hidden w-6 h-6 transition-all duration-75 ease-out -translate-x-1/2 -translate-y-1/2 lg:block left-1/2"
               style={{ top: `${timelineProgress * 120}%` }}
             >
               <div className="relative w-full h-full">
@@ -772,14 +772,14 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-            {/* Numbered Markers */}
-            <div className="absolute flex items-center justify-center w-8 h-8 -translate-x-1/2 bg-gray-800 rounded-sm left-1/2 top-32">
+            {/* Numbered Markers - Hidden on mobile */}
+            <div className="absolute flex items-center justify-center hidden w-8 h-8 -translate-x-1/2 bg-gray-800 rounded-sm lg:flex left-1/2 top-32">
               <span className="text-sm font-bold text-white">01</span>
             </div>
-            <div className="absolute flex items-center justify-center w-8 h-8 -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded-sm left-1/2 top-1/2">
+            <div className="absolute flex items-center justify-center hidden w-8 h-8 -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded-sm lg:flex left-1/2 top-1/2">
               <span className="text-sm font-bold text-white">02</span>
             </div>
-            <div className="absolute flex items-center justify-center w-8 h-8 -translate-x-1/2 bg-gray-800 rounded-sm left-1/2 bottom-32">
+            <div className="absolute flex items-center justify-center hidden w-8 h-8 -translate-x-1/2 bg-gray-800 rounded-sm lg:flex left-1/2 bottom-32">
               <span className="text-sm font-bold text-white">03</span>
             </div>
           </div>
