@@ -30,7 +30,7 @@ const ScrollingBanner: React.FC = () => {
     <div className="relative w-full overflow-hidden bg-[#072b34] text-white">
       <div className="flex whitespace-nowrap">
         {/* Track duplicated twice for seamless loop */}
-        <div className="logo-carousel-left flex items-center gap-8 py-3 pr-8 min-w-max">
+        <div className="flex items-center gap-8 py-3 pr-8 logo-carousel-left min-w-max">
           {words.map((w, i) => (
             <React.Fragment key={`track1-${i}`}>
               <span className="text-[18px] md:text-[20px] font-medium tracking-wide">
@@ -41,7 +41,7 @@ const ScrollingBanner: React.FC = () => {
           ))}
         </div>
         <div
-          className="logo-carousel-left flex items-center gap-8 py-3 pr-8 min-w-max"
+          className="flex items-center gap-8 py-3 pr-8 logo-carousel-left min-w-max"
           aria-hidden
         >
           {words.map((w, i) => (

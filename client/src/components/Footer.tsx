@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-teal-600 opacity-30 blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative">
+      <div className="container relative px-4 mx-auto">
         {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-32">
+        <div className="flex flex-col items-start justify-between mb-32 lg:flex-row">
           {/* Left Side */}
           <div className="mb-12 lg:mb-0">
             <div className="flex items-center gap-4 mb-8">
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
             <h2 className="text-5xl sm:text-6xl font-medium leading-[1.1] mb-4">
               It's now
               <br />
-              time to meet <span className="font-playfair italic">you!</span>
+              time to meet <span className="italic font-playfair">you!</span>
             </h2>
           </div>
 
@@ -52,10 +52,10 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1 - Logo and Contact */}
           <div>
-            <img src="/TDP.png" alt="Digital Pillar" className="h-24 mb-6" />
+            <img src="/TDP (2).png" alt="Digital Pillar" className="h-24 mb-6" />
             <div className="space-y-2 text-gray-300">
               <p>+917700 10286</p>
               <p>info@thedigitalpillar.com</p>
@@ -71,35 +71,35 @@ const Footer: React.FC = () => {
 
           {/* Column 2 - Navigation */}
           <div>
-            <h3 className="text-lg font-medium mb-6">Discover</h3>
+            <h3 className="mb-6 text-lg font-medium">Discover</h3>
             <nav className="space-y-4">
               <a
                 href="#services"
-                className="block text-gray-300 hover:text-white transition-colors"
+                className="block text-gray-300 transition-colors hover:text-white"
               >
                 Services
               </a>
               <a
                 href="#about"
-                className="block text-gray-300 hover:text-white transition-colors"
+                className="block text-gray-300 transition-colors hover:text-white"
               >
                 About
               </a>
               <a
                 href="#work"
-                className="block text-gray-300 hover:text-white transition-colors"
+                className="block text-gray-300 transition-colors hover:text-white"
               >
                 Work
               </a>
               <a
                 href="#contact"
-                className="block text-gray-300 hover:text-white transition-colors"
+                className="block text-gray-300 transition-colors hover:text-white"
               >
                 Contact
               </a>
               <a
                 href="#blog"
-                className="block text-gray-300 hover:text-white transition-colors"
+                className="block text-gray-300 transition-colors hover:text-white"
               >
                 Blog
               </a>
@@ -108,14 +108,14 @@ const Footer: React.FC = () => {
 
           {/* Column 3 - Newsletter */}
           <div className="lg:col-span-2">
-            <h3 className="text-lg font-medium mb-6">
+            <h3 className="mb-6 text-lg font-medium">
               Sign up for our newsletter
             </h3>
             <div className="flex gap-4 mb-4">
               <input
                 type="email"
                 placeholder="E-mail"
-                className="bg-transparent border-b border-gray-600 py-2 px-0 text-white placeholder-gray-500 focus:outline-none focus:border-white flex-grow"
+                className="flex-grow px-0 py-2 text-white placeholder-gray-500 bg-transparent border-b border-gray-600 focus:outline-none focus:border-white"
               />
               <button className="text-white">
                 <ArrowRight className="w-6 h-6" />
@@ -129,41 +129,41 @@ const Footer: React.FC = () => {
 
             {/* Social Media Links */}
             <div className="mt-12">
-              <h3 className="text-lg font-medium mb-6">Follow us</h3>
+              <h3 className="mb-6 text-lg font-medium">Follow us</h3>
               <div className="flex gap-6">
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 transition-colors hover:text-white"
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 transition-colors hover:text-white"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 transition-colors hover:text-white"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 transition-colors hover:text-white"
                 >
                   <Youtube className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 transition-colors hover:text-white"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 transition-colors hover:text-white"
                 >
                   <Bookmark className="w-5 h-5" />
                 </a>

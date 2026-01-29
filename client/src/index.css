@@ -52,7 +52,7 @@
   }
   
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply font-sans bg-background text-foreground;
   }
 }
 
@@ -107,11 +107,16 @@
   }
 
   .logo-carousel-left {
-    animation: slideLeft 30s linear infinite;
+    animation: slideLeft 5s linear infinite;
+  }
+
+  /* Faster variant for specific sections */
+  .logo-carousel-left-fast {
+    animation: slideLeft 15s linear infinite;
   }
 
   .logo-carousel-right {
-    animation: slideRight 30s linear infinite;
+    animation: slideRight 5s linear infinite;
   }
   
   @keyframes rotate {
