@@ -1,6 +1,4 @@
 import React from "react";
-import CircleText from "@/components/CircleText";
-import { Play } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
