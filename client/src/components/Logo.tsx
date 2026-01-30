@@ -5,9 +5,9 @@ const Logo: React.FC = () => {
     <Link href="/">
       <a className="flex items-center">
         <img
-          src="/tdp-logo.png"
+          src="/tdp-logo%20(2).png"
           alt="The Digital Pillar"
-          className="h-20 w-auto"
+          className="w-auto h-20"
         />
       </a>
     </Link>

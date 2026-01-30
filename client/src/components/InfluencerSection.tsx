@@ -272,243 +272,78 @@ const InfluencerSection: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Logo Carousel */}
-        <div className="mt-8 overflow-hidden sm:mt-12 lg:mt-20">
-          {/* First row - moves left */}
-          <div
-            className="flex py-4 mb-6 space-x-12 sm:py-6 lg:py-8 sm:mb-8 lg:mb-12 sm:space-x-16 lg:space-x-24 logo-carousel-left"
-            style={{ width: "max-content" }}
-          >
-            {/* First set of logos */}
-            <div className="flex space-x-8 sm:space-x-12 md:space-x-16 lg:space-x-24">
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
+      {/* Logo Marquee - full width end-to-end */}
+      <div className="w-full mt-8 overflow-hidden sm:mt-12 lg:mt-20" aria-label="Partner logos marquee">
+          {(() => {
+            const row1Logos: { src: string; alt: string }[] = [
+              { src: "/images/partners/Sky%20Furniture-01.png", alt: "Sky Furniture" },
+              { src: "/images/partners/SHOTS_SHORBA.png", alt: "Shots & Shorba" },
+              { src: "/images/partners/md%20logo-04.png", alt: "Aishwaryam by MD GROUP" },
+              { src: "/images/partners/md%20logo-02.png", alt: "MD GROUP" },
+              { src: "/images/partners/Logo-01.png", alt: "Kalpataru" },
+              { src: "/images/partners/Logo.png", alt: "Partner" },
+              { src: "/images/partners/Karan%20Group%20CDR%20logo%202-01.png", alt: "KARAN GROUP" },
+              { src: "/images/partners/Evana%20logo-01.png", alt: "EVANA" },
+              { src: "/images/partners/DR%20logo.png", alt: "NAKSHATRA" },
+              
+            ];
+            const row2Logos: { src: string; alt: string }[] = [
+              { src: "/images/partners/BaV%20Cafe-01.png", alt: "Bookavibe" },
+              { src: "/images/partners/AJ%20Cafe%20Final%20Logo____________Illustrator-01.png", alt: "AJ Cafe" },
+              { src: "/images/partners/afc-academy.png", alt: "AFC MASTER Academy For Change" },
+              { src: "/images/partners/118b09100616847.5f0cd54bd92bf_Artboard%201.png", alt: "Partner" },
+              { src: "/images/partners/118b09100616847.5f0cd54bd92bf_Artboard%202.png", alt: "Partner" },
+              { src: "/images/partners/Degree%20Wala%20Vadapav%20Logo%20(White).png", alt: "Degree Wala Vadapav" },
+              { src: "/images/partners/Chulbul%20Logo.png", alt: "CHULBUL DHABA" },
+              { src: "/images/partners/brew-01.png", alt: "Blending Brew" },
+            ];
+            const logoImgClass =
+              "h-[5.5rem] w-auto object-contain transition-opacity opacity-80 hover:opacity-100 sm:h-24 md:h-28 lg:h-32 max-w-[280px] mix-blend-multiply contrast-[0.92] brightness-[0.95]";
+            return (
+              <>
+                <div
+                  className="flex py-4 mb-6 sm:py-6 lg:py-8 sm:mb-8 lg:mb-12 marquee-track-left"
+                  style={{ width: "max-content" }}
                 >
-                  <path d="M35 0L0 35L35 70L70 35L35 0Z" fill="black" />
-                  <path d="M35 15L15 35L35 55L55 35L35 15Z" fill="white" />
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  CREATIVE DESIGN
-                </p>
-              </div>
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((copy) => (
+                    <div
+                      key={copy}
+                      className="flex items-center flex-shrink-0 gap-8 pr-8 sm:gap-12 md:gap-16 lg:gap-24 sm:pr-12 md:pr-16 lg:pr-24"
+                    >
+                      {row1Logos.map(({ src, alt }) => (
+                        <div key={alt + copy} className="flex items-center justify-center flex-shrink-0">
+                          <img src={src} alt={alt} className={logoImgClass} loading="lazy" />
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+                <div
+                  className="flex py-4 sm:py-6 lg:py-8 marquee-track-right"
+                  style={{ width: "max-content" }}
                 >
-                  <rect
-                    x="10"
-                    y="10"
-                    width="50"
-                    height="50"
-                    stroke="black"
-                    strokeWidth="2"
-                  />
-                  <rect x="20" y="20" width="30" height="30" fill="black" />
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  COMPANY TAB LINE
-                </p>
-              </div>
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
-                >
-                  <circle cx="20" cy="35" r="10" fill="black" />
-                  <circle cx="50" cy="35" r="10" fill="black" />
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  EXCLUSIVE BRAND
-                </p>
-              </div>
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
-                >
-                  <rect x="10" y="10" width="20" height="50" fill="black" />
-                  <rect x="40" y="10" width="20" height="50" fill="black" />
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  NEW BRAND
-                </p>
-              </div>
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
-                >
-                  <circle
-                    cx="35"
-                    cy="35"
-                    r="25"
-                    stroke="black"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                  <path
-                    d="M20 35C20 25 30 15 50 35C30 55 20 45 20 35Z"
-                    fill="black"
-                  />
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  BRAND
-                </p>
-              </div>
-            </div>
-          </div>
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((copy) => (
+                    <div
+                      key={copy}
+                      className="flex items-center flex-shrink-0 gap-8 pr-8 sm:gap-12 md:gap-16 lg:gap-24 sm:pr-12 md:pr-16 lg:pr-24"
+                    >
+                      {row2Logos.map(({ src, alt }) => (
+                        <div key={alt + copy} className="flex items-center justify-center flex-shrink-0">
+                          <img src={src} alt={alt} className={logoImgClass} loading="lazy" />
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </>
+            );
+          })()}
+      </div>
 
-          {/* Second row - moves right */}
-          <div
-            className="flex py-4 space-x-8 sm:py-6 lg:py-8 sm:space-x-12 md:space-x-16 lg:space-x-24 logo-carousel-right"
-            style={{ width: "max-content" }}
-          >
-            {/* First set of logos */}
-            <div className="flex space-x-8 sm:space-x-12 md:space-x-16 lg:space-x-24">
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
-                >
-                  <circle
-                    cx="35"
-                    cy="35"
-                    r="25"
-                    fill="none"
-                    stroke="black"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M25 20C35 30 45 20 45 45C35 35 25 45 25 20Z"
-                    fill="black"
-                  />
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  COMPANY
-                </p>
-              </div>
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
-                >
-                  <circle cx="25" cy="45" r="15" fill="black" />
-                  <circle cx="45" cy="25" r="15" fill="black" />
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  COMPANY
-                </p>
-              </div>
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
-                >
-                  <path d="M35 15L15 55H55L35 15Z" fill="black" />
-                  <path d="M25 35L35 55L45 35L35 15L25 35Z" fill="white" />
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  BRAND
-                </p>
-              </div>
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
-                >
-                  <path
-                    d="M15 35C15 25 25 15 35 15C45 15 55 25 55 35"
-                    stroke="black"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                  <text
-                    x="35"
-                    y="50"
-                    fontSize="16"
-                    textAnchor="middle"
-                    fill="black"
-                    className="sm:text-lg md:text-xl lg:text-2xl"
-                  >
-                    A&C
-                  </text>
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  ARTS & CRAFTS
-                </p>
-              </div>
-              <div className="flex flex-col items-center flex-shrink-0">
-                <svg
-                  width="60"
-                  height="60"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-opacity opacity-90 hover:opacity-100 sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
-                >
-                  <path
-                    d="M10 15H60V55H10V15Z"
-                    fill="none"
-                    stroke="black"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M25 15L10 35L25 55M45 15L60 35L45 55"
-                    fill="none"
-                    stroke="black"
-                    strokeWidth="2"
-                  />
-                </svg>
-                <p className="mt-2 text-xs font-bold tracking-wider text-black sm:mt-3 sm:text-sm">
-                  CREATIVE DESIGN
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="relative z-10 mt-8 text-center text-white sm:mt-12 lg:mt-20">
+      {/* Bottom Section */}
+      <div className="container relative z-10 px-4 mx-auto mt-8 text-center text-white sm:mt-12 lg:mt-20">
           <h2 className="mb-4 text-2xl font-bold sm:mb-6 lg:mb-8 sm:text-3xl md:text-4xl lg:text-6xl">
             Design, Marketing, Branding,
             <br />
@@ -531,7 +366,6 @@ const InfluencerSection: React.FC = () => {
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-[#1F2937]" />
             </div>
           </a>
-        </div>
       </div>
     </section>
   );

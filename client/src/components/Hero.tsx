@@ -77,8 +77,8 @@ const Hero: React.FC = () => {
               </div>
             </a>
 
-            {/* Showreel Button */}
-            <div className="relative transition-transform duration-300 cursor-pointer group hover:scale-105">
+           {/* Showreel Button */}
+            {/* <div className="relative transition-transform duration-300 cursor-pointer group hover:scale-105">
               <div className="flex items-center justify-center w-16 h-16 transition-all duration-300 bg-white border border-gray-200 rounded-full shadow-md sm:w-20 sm:h-20 lg:w-24 lg:h-24 group-hover:shadow-lg">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#6B46C1] rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:bg-[#7c5ac9]">
                   <Play className="w-4 h-4 text-white transition-transform duration-300 fill-current sm:w-5 sm:h-5 lg:w-6 lg:h-6 group-hover:scale-110" />
@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 hidden sm:block">
                 <CircleText text="AGENCY SHOWREEL • WATCH NOW •" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
